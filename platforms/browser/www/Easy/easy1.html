@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <link rel="stylesheet" type="text/css" href="css/index3.css" />
+    <title>Spelling Bee</title>
+</head>
+<style type="text/css">
+body {
+    background-color: green;
+    /*background: url(images/background1.jpg);*/
+    background-repeat:repeat-y;
+    background-position:center center;
+    background-attachment:scroll;
+    background-size:100% 100%;
+}
+.ui-page {
+    background: transparent;
+}
+.ui-content{
+    background: transparent;
+}
+/*For Modal*/
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    width: 30%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+
+}
+
+/* Modal Content/Box */
+.modal-content {
+	 border: 5px solid #a1a1a1;
+	 border-radius: 20px;
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+   
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+</style>
+<body>
+    
+  <br/>
+   <div class= "adjust">
+<div class="ui-alt-icon">
+ &nbsp;  <a href="home.html" class=""><img src= "images/setting.png" width="8%" height="15%"></a>
+</div>
+</div>
+ 
+  <div class="">
+<center><img src="images/cat.jpg" width="100%" height="auto"><br></br>
+<input type="text" id="char" name="char1" required/>
+</center>
+   <br>
+        <div id="deviceready" class="blink">
+&nbsp;&nbsp;&nbsp;
+         
+           
+        </div>
+    </div>
+
+
+    <footer>  <div class="container">
+           <a data-position="fixed" class="adjust" href="category.html" class="ui-block-a"><img src="images/back_icon.png" ></a>
+             
+            <a data-position="fixed" class="adjust"onclick="document.getElementById('id01').style.display='block'" style="width:auto;"class="ui-block-a"><img src="images/exit_icon.png" ></a>
+    </footer>
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" >
+    <div class="imgcontainer">
+     <!-- <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>-->
+      <!--<img src="img_avatar2.png" alt="Avatar" class="avatar">-->
+    </div>
+
+    <div class="container">
+      <!--<label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>-->
+       <center><button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Continue</button><br>
+<button type="button" onclick="openIndex()">Exit</button>
+       </center> 
+
+      <!--<button type="submit">Continue</button>-->
+      <!--<input type="checkbox" checked="checked"> Remember me-->
+    </div>
+
+    
+      
+      <!--<span class="psw">Forgot <a href="#">password?</a></span>-->
+    
+  </form>
+</div>
+
+<script>
+function openIndex(){
+        //alert("Register button clicked!");
+        window.open("category.html", "_self");
+      }
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+function submitchar(){
+    
+        var char = document.getElementById('char').value;
+        
+          var xmlhttp = new XMLHttpRequest();
+          if (window.XMLHttpRequest) {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                // code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function(){
+                if (this.readyState == 4 && this.status == 200) {
+                   // alert('Successfully Register!'+name);
+                   echo'<audio src="Bg_Music/happy-walker.mp3" loop="true" autoplay="true" hidden="true" controls></audio>';
+                    window.open("category.html",'_self');
+
+                }
+            };
+            xmlhttp.open("GET","ajax.php?name="+name,true);
+            xmlhttp.send();
+        
+  }
+</script>
+
+    
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+</body>
+
+</html>

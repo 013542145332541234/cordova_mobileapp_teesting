@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />    
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+
+    <link rel="stylesheet" type="text/css" href="css/index6.css" />
+	<title>Drag</title>
+	<script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.9.2/ui/jquery-ui.js"></script>
+    <script type="text/javascript"></script>
+</head>
+
+<style type="text/css">
+	.tile {
+    /*background-image: url(https://dl.dropboxusercontent.com/s/knhgq8ycjm4i6de/scrabble_tile.png);*/
+    background-image: url("images/scrabble_tile.png");
+    width: 66px;
+    height: 65px;
+    display: inline-block;
+    font-size: 48px;
+    text-align: center;
+    padding-top: 10px;
+    margin: 5px;
+    cursor: pointer;
+    
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+</style>
+<body>
+<ol class="word">
+<li class="tile">T</li>
+    <li class="tile">A</li>
+    <li class="tile">C</li>
+</ol>
+
+<script type="text/javascript">
+	var dictionary = [
+    "TIGER",
+    "LION",
+    "BEAR"
+];
+var myWord = "CAT";
+
+function scramble(word) {
+    return word.split('').sort(function(){ return Math.random() - 0.5 }).join('');
+}
+
+function chooseWord() {
+    return dictionary[Math.floor(Math.random() * dictionary.length)];
+}
+
+function printWord(word) {
+    var html = "";
+    for (var i = 0; i < word.length; i++) {
+        html += '<li class="tile">' + word[i] + '</li>'
+    }
+    $('.word').html(html);
+}
+
+function startGame() {
+    myWord = chooseWord();
+    
+    var scrambled = scramble(myWord);
+    
+    while (scrambled == myWord) {
+        scrambled = scramble(myWord);
+    }
+    
+    printWord(scramble(myWord));
+}
+
+$(function(){    
+    startGame();
+    
+    $('.word').sortable({
+        update: function (e, ui) {
+            console.log(myWord, $('.tile').text());
+            if (myWord === $('.tile').text()) {
+                var playAgain = confirm("You win! Play again?");
+                if (playAgain) {
+                    startGame();
+                }                    
+            }
+        }
+    });  
+});
+</script>
+</body>
+</html>

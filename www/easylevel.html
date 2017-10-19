@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />    
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <script src="js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/index5.css" />
+    <title>Spelling Bug</title>
+</head>
+<style type="text/css">
+body {
+    background: url(images/bg12.png);
+    background-repeat:repeat-y;
+    background-position:center center;
+    background-attachment:scroll;
+    background-size:100% 100%;
+}
+.ui-page {
+    background: transparent;
+}
+.ui-content{
+    background: transparent;
+}
+/*ice cubes*/ 
+  *{
+    box-sizing: border-box;
+  }
+
+  .preload{
+    width: 100%;
+    height: 100%;
+    background: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  .logo{
+    width:300px;
+    height: 70px;
+    margin:150px auto 50px auto;
+    font-size:50px;
+    text-shadow: -1px 2px 2px #000;
+    text-align: center;
+    color:azure;
+  }/*end*/
+  .loader-frame{
+    width: 70px;
+    height: 70px;
+    margin:auto;
+    position: relative;
+  }
+  .loader1, .loader2{
+    position: absolute;
+    border: 5px solid transparent;
+    border-radius: 50%;
+  }
+  .loader1{
+    width: 70px;
+    height:70px;
+    border-top: 5px solid azure;
+    border-bottom: 5px solid azure;
+    animation: clockwisespin 2s linear 3;
+  }
+  .loader2{
+    width: 60px;
+    height:60px;
+    border-left: 5px solid darkturquoise;
+    border-right: 5px solid darkturquoise;
+    top: 5px; left: 5px;
+    animation: anticlockwisespin 2s linear 3;
+  }
+  @keyframes clockwisespin{
+  from{transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+@keyframes anticlockwisespin{
+  from{transform: rotate(0deg);}
+  to {transform: rotate(-360deg);}
+}
+@keyframes fadeout{
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
+</style>
+
+
+<body > 
+
+<audio src="Bg_Music/happy-walker.mp3" loop="true" autoplay="true" hidden="true" controls></audio>
+<audio id="myAudio">
+  
+  <source src="Bg_Music/tongue-click.wav" type="audio/mpeg">
+  
+</audio>
+ <br/>
+<div data-role="page" >
+<!--<audio src="Bg_Music/happy-walker.mp3" loop="true" autoplay="true" hidden="true" controls></audio>-->
+       <div class= "adjust">
+<div class="ui-alt-icon">
+ &nbsp;  <a href="home.html" class="home"><img src= "images/services-icon.png" width="8%" height="15%"></a>
+</div>
+</div>
+
+
+
+ <center> 
+   <img src="images/easylevel.png">
+      <div id="formWrapper">
+</br>
+
+
+<a data-position="fixed" class="adjust" href="loading_S.html" onclick="playAudio()" class="ui-block-a" > <img src="images/1game.png"> </a>
+<img src="images/white-background-with-texture-of-halftone-dots_1051-1357.png" width="75px" height="auto" style="border-radius:10px">
+<!--<a data-position="fixed" class="adjust"  href="easy2.html" class="ui-block-a" > <img src="images/2game.png"> </a>-->
+<img src="images/white-background-with-texture-of-halftone-dots_1051-1357.png" width="75px" height="auto" style="border-radius:10px">
+<!--<a data-position="fixed" class="adjust"  href="easy3.html" class="ui-block-a" > <img src="images/3game.png"> </a>-->
+<img src="images/white-background-with-texture-of-halftone-dots_1051-1357.png" width="75px" height="auto" style="border-radius:10px">
+<!--<a data-position="fixed" class="adjust"  href="easy4.html" class="ui-block-a" > <img src="images/4game.png"> </a>-->
+<img src="images/white-background-with-texture-of-halftone-dots_1051-1357.png" width="75px" height="auto" style="border-radius:10px">
+<!--<a data-position="fixed" class="adjust"  href="easy5.html" class="ui-block-a" > <img src="images/5game.png"> </a>-->
+<img src="images/white-background-with-texture-of-halftone-dots_1051-1357.png" width="75px" height="auto" style="border-radius:10px">
+<!--<a data-position="fixed" class="adjust" href="easy6.html" class="ui-block-a" > <img src="images/6game.png"> </a>-->
+<img src="images/white-background-with-texture-of-halftone-dots_1051-1357.png" width="75px" height="auto" style="border-radius:10px">
+<!--<a data-position="fixed" class="adjust"  href="easy7.html" class="ui-block-a" > <img src="images/7game.png"> </a>-->
+<img src="images/white-background-with-texture-of-halftone-dots_1051-1357.png" width="75px" height="auto" style="border-radius:10px">
+<!--<a data-position="fixed" class="adjust"  href="easy8.html" class="ui-block-a" > <img src="images/8game.png"> </a>-->
+<img src="images/white-background-with-texture-of-halftone-dots_1051-1357.png" width="75px" height="auto" style="border-radius:10px">
+<!--<a data-position="fixed" class="adjust"  href="easy9.html" class="ui-block-a" > <img src="images/9game.png"> </a>-->
+<img src="images/white-background-with-texture-of-halftone-dots_1051-1357.png" width="75px" height="auto" style="border-radius:10px">
+<!--<a data-position="fixed" class="adjust"  href="easy10.html" class="ui-block-a" > <img src="images/10game.png"> </a>-->
+      </div>  
+</center> 
+<b><div class="logo">
+    Spelling-<span style="color:darkturquoise;">Bug</span>
+  </div><b>
+  <div class="loader-frame">
+    <div class="loader1" id="loader1"></div>
+    <div class="loader2" id="loader2"></div>
+  </div>
+  <footer  <div class="container">
+     <a data-position="fixed" id="preload" class="adjust" onclick="goBack()" class="ui-block-a"><img src="images/back_icon.png" ></a>
+        <a data-position="fixed" class="adjust" href="Tutorial.html" class="ui-block-b"><img src="img/ICON22.png" ></a> 
+      <a data-position="fixed" class="adjust" href="index.html" class="ui-block-a"><img src="images/exit_icon.png" ></a>
+       <a data-position="fixed" class="adjust"  onclick="goBack1()" class="ui-block-a"><img src="images/back_icon_copy.png" ></a>
+</footer>
+<script>
+var x = document.getElementById("myAudio"); 
+
+function playAudio() { 
+    x.play();
+function(){
+
+    var preload = document.getElementById("preload");
+    var loading = 0;
+    var id = setInterval(frame, 64);
+
+    function frame(){
+      if (loading == 100){
+        clearInterval(id);
+        window.open("easy1.html", "_self");
+      }else{
+        loading = loading + 1;
+        if(loading == 90){
+          preload.style.animation = "fadeout 1s ease";
+        }
+      }
+    }
+  }
+    
+  ();
+} 
+
+
+</script>
+ <script type="text/javascript">
+            
+function goBack() {
+    window.history.back();
+}
+function goBack1() {
+    window.history.go(-1);
+}
+</script>
+</div>
+</body>
+</html>

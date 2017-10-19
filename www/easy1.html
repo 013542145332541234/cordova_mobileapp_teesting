@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+ 
+<title>Spelling Bug</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+ <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <link rel="stylesheet" type="text/css" href="css/index3.css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+ 
+<script type="text/javascript">
+ 
+// JavaScript will go here
+ 
+</script>
+ 
+</head>
+<style type="text/css">
+ .tile {
+    background-image: url("images/scrabble_tile.png");
+    width: 66px;
+    height: 65px;
+    display: inline-block;
+    font-size: 48px;
+    text-align: center;
+    padding-top: 10px;
+    margin: 5px;
+    cursor: pointer;
+    
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+body {
+    /*background-color: green;*/
+    background: url(images/bg.jpg);
+    background-repeat:repeat-y;
+    background-position:center center;
+    background-attachment:scroll;
+    background-size:100% 100%;
+}
+.ui-page {
+    background: transparent;
+}
+.ui-content{
+    background: transparent;
+}
+/*For Modal*/
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    width: 30%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+
+}
+
+/* Modal Content/Box */
+.modal-content {
+     border: 5px solid #a1a1a1;
+     border-radius: 20px;
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+   
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+
+</style>
+<body>
+<br/>
+   <div class= "adjust">
+<div class="ui-alt-icon">
+ &nbsp;  <a href="home.html" class=""><img src= "images/setting.png" width="8%" height="15%"></a>
+</div>
+</div>
+ <br></br>
+  <div class="">
+<center><img src="images/cat.jpg" style="width:80%;"><br></br>
+<form action="easy2.html">
+<!--<input type="text" id="easy"  required>
+
+<br></br>
+
+<button type="submit" >Submit</button><onclick="submitChar()"//onclick="playAudio()"-->
+</center>
+</form>
+   <br>
+        <!--<div id="deviceready" class="blink">-->
+&nbsp;&nbsp;&nbsp;
+
+ 
+<div id="content">
+ 
+<ol class="word">
+</ol>
+ 
+</div><br></br>
+  <!--</div>-->
+    </div>
+
+
+    <footer>  <div class="container">
+          
+             
+            <a data-position="fixed" class="adjust"onclick="document.getElementById('id01').style.display='block'" style="width:auto;"class="ui-block-a"><img src="images/exit_icon.png" ></a>
+    </footer>
+</body>
+</html>
+<script type="text/javascript">
+var dictionary = [
+    "TIGER",
+    "LION",
+    "BEAR"
+];
+var myWord;
+
+
+
+   var Score=0;
+
+  
+
+
+function myFunction() {
+    var x = document.getElementById("myDIV");
+    var y = document.getElementById("mo");
+        x.style.display = "block";
+        y.style.display = "none";
+    
+}
+
+function sub(){
+    var x = document.getElementById("myDIV");
+    var y = document.getElementById("mo");
+        x.style.display = "none";
+        y.style.display = "block";
+    
+       
+}
+
+
+
+
+
+function scramble(word) {
+    return word.split('').sort(function(){ return Math.random() - 0.5 }).join('');
+}
+
+function chooseWord() {
+    return dictionary[Math.floor(Math.random() * dictionary.length)];
+}
+
+function printWord(word) {
+    var html = "";
+    for (var i = 0; i < word.length; i++) {
+        html += '<li class="tile">' + word[i] + '</li>'
+    }
+    $('.word').html(html);
+}
+
+function startGame() {
+    myWord = chooseWord();
+    
+    var scrambled = scramble(myWord);
+    
+    while (scrambled == myWord) {
+        scrambled = scramble(myWord);
+    }
+    
+    printWord(scramble(myWord));
+}
+
+$(function(){    
+    startGame();
+    
+    $('.word').sortable({
+        update: function (e, ui) {
+            console.log(myWord, $('.tile').text());
+            if (myWord === $('.tile').text()) {
+               Score=Score+1;
+
+                 alert('Your earn'Score 'point/points');
+                //var playAgain = confirm("Correct!!");
+                if (playAgain) {
+                   window.open("easy2.html",'_self');
+                //var playAgain = confirm("Correct!!");
+                //if (playAgain) {
+                    //startGame();
+                   //window.open("Next.html",'_self');
+                }                    
+            }
+        }
+    });  
+});</script>
+
+</script>
+<script>
+ $( init );
+
+ function init() {
+  document.addEventListener("touchstart", touchHandler, true);
+  document.addEventListener("touchmove", touchHandler, true);
+  document.addEventListener("touchend", touchHandler, true);
+  document.addEventListener("touchcancel", touchHandler, true);   
+  }
+  function touchHandler(event)
+  {
+  var touches = event.changedTouches,
+  first = touches[0],
+  type = "";
+  switch(event.type)
+  {
+  case "touchstart": type = "mousedown"; break;
+  case "touchmove":  type="mousemove"; break;        
+  case "touchend":   type="mouseup"; break;
+  default: return;
+  }
+  var simulatedEvent = document.createEvent("MouseEvent");
+   simulatedEvent.initMouseEvent(type, true, true, window, 1,
+                      first.screenX, first.screenY,
+                      first.clientX, first.clientY, false,
+                      false, false, false, 0/*left*/, null);
+  first.target.dispatchEvent(simulatedEvent); 
+  event.preventDefault();
+   }
+</script>

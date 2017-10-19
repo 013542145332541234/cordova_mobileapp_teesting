@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#myDIV {
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+    background-color: lightblue;
+    margin-top: 20px;
+}
+</style>
+</head>
+<body>
+
+<h1>
+<label id="lblScore">0</label>
+</h1>
+
+
+<p>Click the "Try it" button to toggle between hiding and showing the DIV element:</p>
+
+<button  class="button" onclick="myFunction()">Try it</button>
+<button onclick="sub()">Try it mo</button>
+
+<div id="myDIV">
+    <img src="images/cat.jpg" style="width:80%;">
+
+</div>
+
+<div id="mo" style="display: none">
+    
+    <img src="images/dog.jpg" style="width:80%;">
+
+
+</div>
+
+
+</body>
+</html>
+
+
+<script>
+   var Score=0;
+
+  
+
+
+function myFunction() {
+    var x = document.getElementById("myDIV");
+    var y = document.getElementById("mo");
+        x.style.display = "block";
+        y.style.display = "none";
+    
+}
+
+function sub(){
+    var x = document.getElementById("myDIV");
+    var y = document.getElementById("mo");
+        x.style.display = "none";
+        y.style.display = "block";
+    
+       
+}
+
+
+
+  if (sub() != true) 
+        {
+            Score=Score+1;
+    }
+    else 
+    {
+            Score=Score-1;
+    }
+
+
+    var lblScore = Document.getElementbyId('lblScore');
+    lblScore.innerHTML=Score;
+
+
+</script>
